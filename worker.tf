@@ -4,7 +4,7 @@
 
 resource "aws_eks_node_group" "eksnode" {
   cluster_name    = "${var.eks_cluster}"
-  node_group_name = "eksnodegroup"
+  node_group_name = "${var.eks_cluster}"
   node_role_arn   = aws_iam_role.eksnoderole.arn
   subnet_ids      = ["subnet-03154649ebcf7cb83", "subnet-00efa00850eca3c30"]
 
